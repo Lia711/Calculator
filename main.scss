@@ -1,6 +1,6 @@
 .calculator-box {
-    height:500px;
-    width:300px;
+    height:100%;
+    width:75%;
     background-color: rgb(67, 104, 89);
     margin-left:auto;
     margin-right:auto;
@@ -13,20 +13,24 @@
         margin-left:auto;
         margin-right:auto;
         width:90%;
-        height:20%;
+        height:100%;
+        padding-bottom:20%;
         background-color:rgb(254, 255, 209);
         border:3px solid black;
     }
 
     .buttons {
-        padding-top:10%;
-        margin:auto;
+        padding-top:8%;
+        bottom:12%;
+        margin-left:auto;
+        margin-right:auto;
+        margin-bottom:10%;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
         gap: 5%;
-        height:300px;
-        width:280px;
+        height:100%;
+        width:80%;
         
     button {
         background-color: rgb(231, 231, 231);
@@ -43,13 +47,14 @@
 }
 
     .footer {
-        margin-top:3%;
+        padding-top:5%;
+        padding-bottom:5%;
         display: flex;
         justify-content: center;
         align-items: center;
         font-family:'Lucida Sans';
         font-style: italic;
-        font-size: 22px;
+        font-size: 25px;
         color:rgb(231, 231, 231);
         text-shadow: 0 0 3px black, 0 0 3px black, 0 0 3px black, 0 0 3px black,
     }
