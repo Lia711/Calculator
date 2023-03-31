@@ -8,6 +8,7 @@ const buttonDelete=document.querySelector(".buttons__delete")
 const buttonSign=document.querySelector(".buttons__sign")
 const buttonEquals=document.querySelector(".buttons__equals")
 
+
 console.log(buttonNumber);
 console.log(inputField);
 console.log(buttonOperator);
@@ -20,6 +21,8 @@ console.log(buttonEquals);
 //main variables for calculation
 let number = ""
 let operator = ""
+let number1 = ""
+let number2= ""
 
 //inputting numbers
 const handleNumberClick = (event) => {
@@ -36,15 +39,18 @@ const handleOperatorClick = (event) => {
     operator = event.target.innerText
     console.log("operator", operator);
     inputField.innerText=operator;
+    number1=number;
+    number=0;
 }
 
 //clear number
 const handleClearClick = (event) => {
     console.log(event)
     number = 0;
+    number1=0;
+    number2=0;
     inputField.innerText="";
 }
-
 
 
 //turn number into percentage
@@ -69,9 +75,27 @@ const handleSignClick = (event) => {
     inputField.innerText=number;
 }
 
-//calculation function
-const handleCalculation=(event) => {
+
+//calculation function/switch case for operators
+const handleCalculation=(event)=> { 
     console.log(event)
+    number2=number;
+    let output
+    switch (operator) {
+        case "+":
+            output=number1+number2;
+            break;
+        case "-":
+            output=number1-number2;
+            break;
+        case "x":
+            output=number1*number2;
+            break;
+        case "/":
+            output=number1/number2;
+            break;
+    }
+    inputField.innerText=output;
 }
 
 //numbers event listener
