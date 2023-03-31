@@ -5,16 +5,21 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 5%;
+  margin-bottom: 10%;
   border: 3px solid black;
   border-radius: 15px;
 }
-.calculator-box .input-box {
+.calculator-box .input__box {
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  color: rgb(27, 42, 36);
+  font-family: "Segoe UI";
   margin-top: 5%;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 4%;
   width: 90%;
-  height: 100%;
-  padding-bottom: 20%;
+  height: 50px;
+  padding-top: 5%;
   background-color: rgb(254, 255, 209);
   border: 3px solid black;
 }
