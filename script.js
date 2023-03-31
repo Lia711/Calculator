@@ -7,7 +7,7 @@ const buttonPercentage=document.querySelector(".buttons__percentage")
 const buttonDelete=document.querySelector(".buttons__delete")
 const buttonSign=document.querySelector(".buttons__sign")
 const buttonEquals=document.querySelector(".buttons__equals")
-const buttonDecimal=document.querySelector(".buttons__decimal")
+
 
 console.log(buttonNumber);
 console.log(inputField);
@@ -17,7 +17,7 @@ console.log(buttonPercentage)
 console.log(buttonDelete);
 console.log(buttonSign);
 console.log(buttonEquals);
-console.log(buttonDecimal);
+
 
 //main variables for calculation
 let number = ""
@@ -28,9 +28,7 @@ let number2= ""
 //inputting numbers
 const handleNumberClick = (event) => {
     //numbers can have multiple digits
-    number = number+event.target.innerText
-    number = parseInt(number)
-    console.log("operator", operator);
+    number = parseInt(number+event.target.innerText)
     //display current number
     inputField.innerText=number;
 }
@@ -38,7 +36,6 @@ const handleNumberClick = (event) => {
 //using operators
 const handleOperatorClick = (event) => {
     operator = event.target.innerText
-    console.log("operator", operator);
     inputField.innerText=operator;
     //after operator is used, number1 is finalized
     number1=number;
@@ -78,10 +75,7 @@ const handleSignClick = (event) => {
     inputField.innerText=number;
 }
 
-//add decimal 
-const handleDecimal=(event)=> {
-    console.log(event)
-}
+
 
 //calculation function/switch case for operators
 const handleCalculation=(event)=> { 
@@ -132,7 +126,7 @@ buttonSign.addEventListener("click", handleSignClick)
 
 buttonEquals.addEventListener("click", handleCalculation)
 
-buttonDecimal.addEventListener("click", handleDecimal)
+
 
 //handle multiple inputs 
 //decimal
