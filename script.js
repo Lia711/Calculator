@@ -8,7 +8,6 @@ const buttonDelete=document.querySelector(".buttons__delete")
 const buttonSign=document.querySelector(".buttons__sign")
 const buttonEquals=document.querySelector(".buttons__equals")
 
-
 console.log(buttonNumber);
 console.log(inputField);
 console.log(buttonOperator);
@@ -39,11 +38,13 @@ const handleOperatorClick = (event) => {
     operator = event.target.innerText
     console.log("operator", operator);
     inputField.innerText=operator;
+    //after operator is used, number1 is finalized
     number1=number;
+    //number variable can be used again to store next number
     number=0;
 }
 
-//clear number
+//clear numbers
 const handleClearClick = (event) => {
     console.log(event)
     number = 0;
@@ -79,6 +80,7 @@ const handleSignClick = (event) => {
 //calculation function/switch case for operators
 const handleCalculation=(event)=> { 
     console.log(event)
+    //latest input (after operator) becomes number2
     number2=number;
     let output
     switch (operator) {
@@ -95,6 +97,8 @@ const handleCalculation=(event)=> {
             output=number1/number2;
             break;
     }
+    //rounds to 5 decimal places
+    output=Math.round(output*100000)/100000;
     inputField.innerText=output;
 }
 
@@ -119,8 +123,7 @@ buttonSign.addEventListener("click", handleSignClick)
 
 buttonEquals.addEventListener("click", handleCalculation)
 
-//functional operators
-//equals
+//chain calculations
 //decimal
 
 
