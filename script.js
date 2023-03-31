@@ -4,6 +4,7 @@ const buttonOperator=document.querySelectorAll(".buttons__operator")
 const buttonClear=document.querySelector(".buttons__clear")
 const buttonPercentage=document.querySelector(".buttons__percentage")
 const buttonDelete=document.querySelector(".buttons__delete")
+const buttonSign=document.querySelector(".buttons__sign")
 
 console.log(buttonNumber);
 console.log(inputField);
@@ -11,12 +12,14 @@ console.log(buttonOperator);
 console.log(buttonClear);
 console.log(buttonPercentage)
 console.log(buttonDelete);
+console.log(buttonSign);
 
 let number = ""
 let operator = ""
 
 const handleNumberClick = (event) => {
-    number = parseInt(event.target.innerText)
+    number = number+event.target.innerText
+    number = parseInt(number)
     console.log("operator", operator);
     inputField.innerText=number;
 }
@@ -52,16 +55,23 @@ const handleDelClick = (event) => {
     inputField.innerText=number;
 }
 
+const handleSignClick = (event) => {
+    console.log(event)
+    number=number*-1
+    inputField.innerText=number;
+}
+
 buttonClear.addEventListener("click", handleClearClick)
 
 buttonPercentage.addEventListener("click", handlePercentageClick)
 
 buttonDelete.addEventListener("click", handleDelClick)
 
+buttonSign.addEventListener("click", handleSignClick)
+
 //stack numbers
 //functional operators
 //equals
-//negative/positive value
 //decimal
 
 
