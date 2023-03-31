@@ -20,35 +20,40 @@ console.log(buttonEquals);
 
 
 //main variables for calculation
-let number = ""
+let result = ""
 let operator = ""
 let number1 = ""
 let number2= ""
 
+const updateDisplay = () => {
+    inputField.innerText=`${number1}${operator}${number2}`;
+}
+
 //inputting numbers
 const handleNumberClick = (event) => {
-    //numbers can have multiple digits
-    number = parseInt(number+event.target.innerText)
-    //display current number
-    inputField.innerText=number;
+    if (operator!=="") {
+        number2 =parseInt(number2+event.target.innerText);
+
+    } else {
+        number1= parseInt(number1+event.target.innerText);
+        //number1=number;
+    }
+    updateDisplay();
 }
 
 //using operators
 const handleOperatorClick = (event) => {
     operator = event.target.innerText
-    inputField.innerText=operator;
-    //after operator is used, number1 is finalized
-    number1=number;
-    //number variable can be used again to store next number
-    number=0;
+    updateDisplay();
 }
 
 //clear numbers
 const handleClearClick = (event) => {
     console.log(event)
-    number = 0;
-    number1=0;
-    number2=0;
+    result="";
+    number1="";
+    number2="";
+    operator="";
     inputField.innerText="";
 }
 
@@ -81,7 +86,6 @@ const handleSignClick = (event) => {
 const handleCalculation=(event)=> { 
     console.log(event)
     //latest input (after operator) becomes number2
-    number2=number;
     let output
     switch (operator) {
         case "+":
@@ -101,8 +105,7 @@ const handleCalculation=(event)=> {
     output=Math.round(output*100000)/100000;
     inputField.innerText=output;
     //handle a chain of calculations
-    number2=0;
-    number=output;
+    number1=output;
 }
 
 //numbers event listener
