@@ -8,7 +8,6 @@ const buttonDelete=document.querySelector(".buttons__delete")
 const buttonSign=document.querySelector(".buttons__sign")
 const buttonEquals=document.querySelector(".buttons__equals")
 
-
 console.log(buttonNumber);
 console.log(inputField);
 console.log(buttonOperator);
@@ -17,7 +16,6 @@ console.log(buttonPercentage)
 console.log(buttonDelete);
 console.log(buttonSign);
 console.log(buttonEquals);
-
 
 //main variables for calculation
 let result = ""
@@ -90,7 +88,6 @@ const handleSignClick = (event) => {
 //calculation function/switch case for operators
 const handleCalculation=(event)=> { 
     console.log(event)
-    //latest input (after operator) becomes number2
     let output
     switch (operator) {
         case "+":
@@ -109,6 +106,9 @@ const handleCalculation=(event)=> {
     //rounds to 5 decimal places
     output=Math.round(output*100000)/100000;
     inputField.innerText=output;
+    //can handle a chain of operations
+    number1=output;
+    number2="";
 }
 
 //numbers event listener
@@ -121,7 +121,7 @@ buttonOperator.forEach((button)=> {
     button.addEventListener("click", handleOperatorClick)
 })
 
-//event listeners for AC, %, +/-, =, decimal
+//event listeners for AC, %, +/-, =
 buttonClear.addEventListener("click", handleClearClick)
 buttonPercentage.addEventListener("click", handlePercentageClick)
 buttonDelete.addEventListener("click", handleDelClick)
