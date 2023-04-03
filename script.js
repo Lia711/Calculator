@@ -36,7 +36,6 @@ const handleNumberClick = (event) => {
 
     } else {
         number1= parseInt(number1+event.target.innerText);
-        //number1=number;
     }
     updateDisplay();
 }
@@ -54,33 +53,39 @@ const handleClearClick = (event) => {
     number1="";
     number2="";
     operator="";
-    inputField.innerText="";
+    updateDisplay;
 }
-
 
 //turn number into percentage
 const handlePercentageClick = (event) => {
     console.log(event)
-    number=number*0.01;
-    inputField.innerText=number;
+    if (operator!=="") {
+        number2=number2*0.01;
+    } else {
+        number1=number1*0.01;
+    } updateDisplay;
 }
-
+ 
 //delete last digit of number
 const handleDelClick = (event) => {
     console.log(event)
-    //convert to string to slice off last digit, then join and parse into number
-    number=parseInt(number.toString().split("").slice(0, -1).join(""))
-    inputField.innerText=number;
+    if (operator!=="") {
+        //convert to string to slice off last digit, then join and parse into number
+        number2=parseInt(number2.toString().split("").slice(0, -1).join(""))
+    } else {
+        number1=parseInt(number1.toString().split("").slice(0, -1).join(""))
+    } updateDisplay;  
 }
 
 //number changes between positive and negative value each click
 const handleSignClick = (event) => {
     console.log(event)
-    number=number*-1
-    inputField.innerText=number;
+    if (operator!=="") {
+        number2=number2*-1;
+    } else {
+        number1=number1*-1;
+    } updateDisplay;
 }
-
-
 
 //calculation function/switch case for operators
 const handleCalculation=(event)=> { 
