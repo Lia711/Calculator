@@ -53,7 +53,7 @@ const handleClearClick = (event) => {
     number1="";
     number2="";
     operator="";
-    updateDisplay;
+    updateDisplay();
 }
 
 //turn number into percentage
@@ -63,7 +63,7 @@ const handlePercentageClick = (event) => {
         number2=number2*0.01;
     } else {
         number1=number1*0.01;
-    } updateDisplay;
+    } updateDisplay();
 }
  
 //delete last digit of number
@@ -74,7 +74,7 @@ const handleDelClick = (event) => {
         number2=parseInt(number2.toString().split("").slice(0, -1).join(""))
     } else {
         number1=parseInt(number1.toString().split("").slice(0, -1).join(""))
-    } updateDisplay;  
+    } updateDisplay();  
 }
 
 //number changes between positive and negative value each click
@@ -84,7 +84,7 @@ const handleSignClick = (event) => {
         number2=number2*-1;
     } else {
         number1=number1*-1;
-    } updateDisplay;
+    } updateDisplay();
 }
 
 //calculation function/switch case for operators
@@ -125,20 +125,10 @@ buttonOperator.forEach((button)=> {
 
 //event listeners for AC, %, +/-, =, decimal
 buttonClear.addEventListener("click", handleClearClick)
-
 buttonPercentage.addEventListener("click", handlePercentageClick)
-
 buttonDelete.addEventListener("click", handleDelClick)
-
 buttonSign.addEventListener("click", handleSignClick)
-
 buttonEquals.addEventListener("click", handleCalculation)
-
-
-
-//handle multiple inputs 
-//decimal
-//clear operator
 
 
 
