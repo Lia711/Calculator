@@ -109,8 +109,6 @@ const handleCalculation=(event)=> {
     //rounds to 5 decimal places
     output=Math.round(output*100000)/100000;
     inputField.innerText=output;
-    //handle a chain of calculations
-    number1=output;
 }
 
 //numbers event listener
@@ -129,8 +127,4 @@ buttonPercentage.addEventListener("click", handlePercentageClick)
 buttonDelete.addEventListener("click", handleDelClick)
 buttonSign.addEventListener("click", handleSignClick)
 buttonEquals.addEventListener("click", handleCalculation)
-
-
-
-
 
