@@ -8,15 +8,6 @@ const buttonDelete=document.querySelector(".buttons__delete")
 const buttonSign=document.querySelector(".buttons__sign")
 const buttonEquals=document.querySelector(".buttons__equals")
 
-console.log(buttonNumber);
-console.log(inputField);
-console.log(buttonOperator);
-console.log(buttonClear);
-console.log(buttonPercentage)
-console.log(buttonDelete);
-console.log(buttonSign);
-console.log(buttonEquals);
-
 //main variables for calculation
 let operator = ""
 let number1 = ""
@@ -104,7 +95,7 @@ const handleCalculation=(event)=> {
     //rounds to 5 decimal places
     output=Math.round(output*100000)/100000;
     inputField.innerText=output;
-    //can handle a chain of operations
+    //handle a chain of operations
     number1=output;
     number2="";
 }
