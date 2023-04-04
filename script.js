@@ -18,7 +18,6 @@ console.log(buttonSign);
 console.log(buttonEquals);
 
 //main variables for calculation
-let result = ""
 let operator = ""
 let number1 = ""
 let number2= ""
@@ -47,7 +46,6 @@ const handleOperatorClick = (event) => {
 //clear numbers
 const handleClearClick = (event) => {
     console.log(event)
-    result="";
     number1="";
     number2="";
     operator="";
