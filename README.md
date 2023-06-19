@@ -1,4 +1,5 @@
 Calculator
+
 Features:
 
 Simple calculator made with html, scss and javascript.
