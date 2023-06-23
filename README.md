@@ -23,3 +23,7 @@ Files:
 Known issues:
 
 - the decimal button doesn't work and calculator cannot handle decimal numbers as of now
+
+Screenshots:
+![image](https://github.com/Lia711/Calculator/assets/125596830/43117cc7-2503-41ab-981c-602fbc0d5acf)
+
